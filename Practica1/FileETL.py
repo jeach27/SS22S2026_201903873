@@ -17,7 +17,6 @@ from pathlib import Path
 
 # ============================================================
 # CONFIGURACIÓN GENERAL
-# Modifica estas variables según tu entorno
 # ============================================================
 
 # Rutas de los archivos fuente
@@ -25,13 +24,11 @@ RUTA_DATASET1 = "Dataset_1.csv"   # vuelos
 RUTA_DATASET2 = "Dataset_2.csv"   # pasajeros
 
 # Cadena de conexión a SQL Server
-# Ajusta SERVER, DATABASE y las credenciales según tu instalación
 CONEXION_SQL = (
     "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost;"          # o el nombre de tu instancia
+    "SERVER=localhost;"       
     "DATABASE=VuelosBI;"
-    "Trusted_Connection=yes;"    # usa autenticación de Windows
-    # Si usas usuario y contraseña, comenta la línea anterior y usa:
+    "Trusted_Connection=yes;"
     # "UID=tu_usuario;"
     # "PWD=tu_contraseña;"
 )
@@ -42,7 +39,6 @@ RUTA_LOG = "etl_log.txt"
 
 # ============================================================
 # CONFIGURACIÓN DE LOGGING
-# Guarda mensajes tanto en consola como en archivo de texto
 # ============================================================
 
 logging.basicConfig(
@@ -85,13 +81,12 @@ AEROPUERTOS = {
 NORMALIZACION_GENERO = {
     "m": "M", "masculino": "M", "male": "M",
     "f": "F", "femenino": "F", "female": "F",
-    "x": "X", "nobinario": "X", "no_binario": "X", "nb": "X",
+    "x": "X", "otro": "X", "other": "X", "o": "X",
 }
 
 
 # ============================================================
 # FASE 1: EXTRACCIÓN
-# Leer los archivos CSV tal como vienen, sin transformar aún
 # ============================================================
 
 def extraer_datos():
@@ -149,7 +144,6 @@ def extraer_datos():
 
 # ============================================================
 # FASE 2: TRANSFORMACIÓN
-# Limpiar, validar y estandarizar todos los campos
 # ============================================================
 
 def parsear_fecha(valor: str) -> datetime | None:
@@ -434,7 +428,6 @@ def construir_dimensiones(df_vuelos: pd.DataFrame, df_pasajeros: pd.DataFrame) -
 
 # ============================================================
 # FASE 3: CARGA
-# Insertar datos en SQL Server usando transacciones
 # ============================================================
 
 def obtener_conexion() -> pyodbc.Connection:

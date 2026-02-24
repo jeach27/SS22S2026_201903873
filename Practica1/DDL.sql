@@ -1,7 +1,6 @@
 -- ============================================================
 --  PRÁCTICA 1 - Seminario de Sistemas 2
---  Script: Creación del Modelo Multidimensional
---  Motor:  Microsoft SQL Server
+--  DDL
 -- ============================================================
 
 USE master;
@@ -15,7 +14,7 @@ USE VuelosBI;
 GO
 
 -- ------------------------------------------------------------
--- 0. DROP de tablas en orden (FK primero, luego dimensiones)
+-- DROP de tablas en orden
 -- ------------------------------------------------------------
 IF OBJECT_ID('dbo.Hechos_Vuelo',       'U') IS NOT NULL DROP TABLE dbo.Hechos_Vuelo;
 IF OBJECT_ID('dbo.DIM_AEROLINEA',      'U') IS NOT NULL DROP TABLE dbo.DIM_AEROLINEA;
@@ -30,7 +29,7 @@ IF OBJECT_ID('dbo.DIM_ESTADO_VUELO',   'U') IS NOT NULL DROP TABLE dbo.DIM_ESTAD
 GO
 
 -- ============================================================
--- 1. DIMENSIONES
+-- DIMENSIONES
 -- ============================================================
 
 -- ------------------------------------------------------------
@@ -79,13 +78,13 @@ GO
 -- (Salida, Llegada y Reserva apuntan a ella).
 -- ------------------------------------------------------------
 CREATE TABLE dbo.DIM_TIEMPO (
-    ID_Fecha        INT     PRIMARY KEY,            -- formato YYYYMMDD como INT
+    ID_Fecha        INT     PRIMARY KEY,  
     Fecha_Completa  DATE    NOT NULL,
     Año             SMALLINT NOT NULL,
     Mes             TINYINT  NOT NULL,
     Nombre_Mes      VARCHAR(15) NOT NULL,
     Dia             TINYINT  NOT NULL,
-    Dia_Semana      TINYINT  NOT NULL,              -- 1=Lunes ... 7=Domingo
+    Dia_Semana      TINYINT  NOT NULL,   
     Trimestre       TINYINT  NOT NULL,
     Es_Fin_Semana   BIT      NOT NULL DEFAULT 0
 );
@@ -147,7 +146,7 @@ CREATE TABLE dbo.DIM_ESTADO_VUELO (
 GO
 
 -- ============================================================
--- 2. TABLA DE HECHOS
+-- TABLA DE HECHOS
 -- ============================================================
 
 -- ------------------------------------------------------------
@@ -184,7 +183,7 @@ CREATE TABLE dbo.Hechos_Vuelo (
     Maletas_Chequeadas      TINYINT       NOT NULL DEFAULT 0,
     Duracion                SMALLINT      NULL,       -- minutos, NULL si cancelado
     Retraso                 SMALLINT      NULL,       -- minutos, NULL si no aplica
-    Cantidad_Vuelo          TINYINT       NOT NULL DEFAULT 1, -- siempre 1, útil para BI
+    Cantidad_Vuelo          TINYINT       NOT NULL DEFAULT 1, -- siempre 1
 
     -- FK constraints
     CONSTRAINT FK_Fact_Aerolinea        FOREIGN KEY (ID_Aerolinea)
@@ -226,7 +225,7 @@ CREATE TABLE dbo.Hechos_Vuelo (
 GO
 
 -- ============================================================
--- 3. ÍNDICES para optimizar consultas analíticas
+-- ÍNDICES para optimizar consultas analíticas
 -- ============================================================
 CREATE INDEX IX_Fact_Aerolinea      ON dbo.Hechos_Vuelo (ID_Aerolinea);
 CREATE INDEX IX_Fact_AeropDestino   ON dbo.Hechos_Vuelo (ID_Aeropuerto_Destino);
@@ -237,7 +236,7 @@ CREATE INDEX IX_Fact_Canal          ON dbo.Hechos_Vuelo (ID_Canal);
 GO
 
 -- ============================================================
--- 4. CARGA DE CATÁLOGOS ESTÁTICOS (aeropuertos conocidos)
+-- CARGA DE CATÁLOGOS ESTÁTICOS (aeropuertos conocidos)
 -- ============================================================
 INSERT INTO dbo.DIM_AEROPUERTO (Codigo, Nombre, Pais) VALUES
 ('GUA', 'Aeropuerto Internacional La Aurora',          'Guatemala'),

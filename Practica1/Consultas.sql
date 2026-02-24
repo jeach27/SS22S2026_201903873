@@ -1,18 +1,17 @@
 -- ============================================================
 --  PRÁCTICA 1 - Seminario de Sistemas 2
---  Script: Consultas Analíticas
---  Motor:  Microsoft SQL Server / VuelosBI
+--  Consultas Analíticas
 -- ============================================================
 
 USE VuelosBI;
 GO
 
 -- ============================================================
--- SECCIÓN 1: VALIDACIÓN DE CARGA
+-- VALIDACIÓN DE CARGA
 -- Verificar que los datos se cargaron correctamente
 -- ============================================================
 
--- 1.1 Conteo de registros por tabla
+-- Conteo de registros por tabla
 SELECT 'DIM_AEROLINEA'    AS Tabla, COUNT(*) AS Registros FROM dbo.DIM_AEROLINEA    UNION ALL
 SELECT 'DIM_PASAJERO',              COUNT(*)              FROM dbo.DIM_PASAJERO      UNION ALL
 SELECT 'DIM_AEROPUERTO',            COUNT(*)              FROM dbo.DIM_AEROPUERTO    UNION ALL
@@ -25,7 +24,7 @@ SELECT 'DIM_ESTADO_VUELO',          COUNT(*)              FROM dbo.DIM_ESTADO_VU
 SELECT 'Hechos_Vuelo',              COUNT(*)              FROM dbo.Hechos_Vuelo;
 GO
 
--- 1.2 Verificar integridad: ningún FK debe quedar huérfano
+-- Verificar integridad: ningún FK debe quedar huérfano
 SELECT COUNT(*) AS Huerfanos_Aerolinea
 FROM dbo.Hechos_Vuelo h
 LEFT JOIN dbo.DIM_AEROLINEA a ON h.ID_Aerolinea = a.ID_Aerolinea
@@ -37,7 +36,7 @@ LEFT JOIN dbo.DIM_AEROPUERTO ap ON h.ID_Aeropuerto_Origen = ap.ID_Aeropuerto
 WHERE ap.ID_Aeropuerto IS NULL;
 GO
 
--- 1.3 Rango de fechas cargadas
+-- Rango de fechas cargadas
 SELECT
     MIN(Fecha_Completa) AS Fecha_Mas_Antigua,
     MAX(Fecha_Completa) AS Fecha_Mas_Reciente,
@@ -46,10 +45,10 @@ FROM dbo.DIM_TIEMPO;
 GO
 
 -- ============================================================
--- SECCIÓN 2: INDICADORES DE VUELOS
+-- INDICADORES DE VUELOS
 -- ============================================================
 
--- 2.1 Total de vuelos y distribución por estado
+-- Total de vuelos y distribución por estado
 SELECT
     e.Estado,
     COUNT(*)                                      AS Total_Vuelos,
@@ -60,7 +59,7 @@ GROUP BY e.Estado
 ORDER BY Total_Vuelos DESC;
 GO
 
--- 2.2 Top 5 aeropuertos de destino más frecuentes
+-- Top 5 aeropuertos de destino más frecuentes
 SELECT TOP 5
     ap.Codigo,
     ap.Nombre,
@@ -72,7 +71,7 @@ GROUP BY ap.Codigo, ap.Nombre, ap.Pais
 ORDER BY Total_Vuelos_Llegada DESC;
 GO
 
--- 2.3 Top 5 rutas más frecuentes (Origen → Destino)
+-- Top 5 rutas más frecuentes (Origen → Destino)
 SELECT TOP 5
     origen.Codigo   AS Origen,
     destino.Codigo  AS Destino,
@@ -86,7 +85,7 @@ GROUP BY origen.Codigo, origen.Pais, destino.Codigo, destino.Pais
 ORDER BY Total_Vuelos DESC;
 GO
 
--- 2.4 Vuelos por aerolínea con promedio de retraso
+-- Vuelos por aerolínea con promedio de retraso
 SELECT
     a.Codigo,
     a.Nombre                                AS Aerolinea,
@@ -101,7 +100,7 @@ GROUP BY a.Codigo, a.Nombre
 ORDER BY Total_Vuelos DESC;
 GO
 
--- 2.5 Duración promedio de vuelo por tipo de aeronave
+-- Duración promedio de vuelo por tipo de aeronave
 SELECT
     av.Tipo_Aeronave,
     COUNT(*)                        AS Total_Vuelos,
@@ -116,10 +115,10 @@ ORDER BY Duracion_Promedio_Min DESC;
 GO
 
 -- ============================================================
--- SECCIÓN 3: INDICADORES DE PASAJEROS
+-- INDICADORES DE PASAJEROS
 -- ============================================================
 
--- 3.1 Distribución de vuelos por género del pasajero
+-- Distribución de vuelos por género del pasajero
 SELECT
     p.Genero,
     COUNT(*)                                      AS Total_Vuelos,
@@ -130,7 +129,7 @@ GROUP BY p.Genero
 ORDER BY Total_Vuelos DESC;
 GO
 
--- 3.2 Top 5 nacionalidades con más vuelos
+-- Top 5 nacionalidades con más vuelos
 SELECT TOP 5
     ISNULL(p.Nacionalidad, 'NO_ESPECIFICADO') AS Nacionalidad,
     COUNT(*) AS Total_Vuelos,
@@ -141,7 +140,7 @@ GROUP BY p.Nacionalidad
 ORDER BY Total_Vuelos DESC;
 GO
 
--- 3.3 Distribución por clase de cabina y género
+-- Distribución por clase de cabina y género
 SELECT
     cl.Clase_Cabina,
     p.Genero,
@@ -155,10 +154,10 @@ ORDER BY cl.Clase_Cabina, p.Genero;
 GO
 
 -- ============================================================
--- SECCIÓN 4: ANÁLISIS DE INGRESOS Y VENTAS
+-- ANÁLISIS DE INGRESOS Y VENTAS
 -- ============================================================
 
--- 4.1 Ingresos totales y promedio por canal de venta
+-- Ingresos totales y promedio por canal de venta
 SELECT
     c.Canal,
     COUNT(*)                    AS Total_Reservas,
@@ -172,7 +171,7 @@ GROUP BY c.Canal
 ORDER BY Ingreso_Total_USD DESC;
 GO
 
--- 4.2 Ingresos por método de pago
+-- Ingresos por método de pago
 SELECT
     mp.Metodo_Pago,
     COUNT(*)             AS Total_Transacciones,
@@ -184,7 +183,7 @@ GROUP BY mp.Metodo_Pago
 ORDER BY Ingreso_Total_USD DESC;
 GO
 
--- 4.3 Distribución de monedas usadas en compras
+-- Distribución de monedas usadas en compras
 SELECT
     h.Moneda_Original,
     COUNT(*)             AS Total_Transacciones,
@@ -196,10 +195,10 @@ ORDER BY Total_Transacciones DESC;
 GO
 
 -- ============================================================
--- SECCIÓN 5: ANÁLISIS TEMPORAL
+-- ANÁLISIS TEMPORAL
 -- ============================================================
 
--- 5.1 Vuelos por mes y año (tendencia temporal)
+-- Vuelos por mes y año (tendencia temporal)
 SELECT
     t.Año,
     t.Mes,
@@ -213,7 +212,7 @@ GROUP BY t.Año, t.Mes, t.Nombre_Mes
 ORDER BY t.Año, t.Mes;
 GO
 
--- 5.2 Vuelos por trimestre
+-- Vuelos por trimestre
 SELECT
     t.Año,
     t.Trimestre,
@@ -227,7 +226,7 @@ GROUP BY t.Año, t.Trimestre
 ORDER BY t.Año, t.Trimestre;
 GO
 
--- 5.3 Comparativo fin de semana vs días laborales
+-- Comparativo fin de semana vs días laborales
 SELECT
     CASE t.Es_Fin_Semana WHEN 1 THEN 'Fin de Semana' ELSE 'Día Laboral' END AS Tipo_Dia,
     COUNT(*)             AS Total_Vuelos,
@@ -240,10 +239,10 @@ GROUP BY t.Es_Fin_Semana;
 GO
 
 -- ============================================================
--- SECCIÓN 6: ANÁLISIS DE EQUIPAJE
+-- ANÁLISIS DE EQUIPAJE
 -- ============================================================
 
--- 6.1 Promedio de maletas por clase de cabina
+-- Promedio de maletas por clase de cabina
 SELECT
     cl.Clase_Cabina,
     AVG(CAST(h.Total_Maletas     AS FLOAT)) AS Promedio_Maletas_Total,
@@ -254,7 +253,7 @@ GROUP BY cl.Clase_Cabina
 ORDER BY Promedio_Maletas_Total DESC;
 GO
 
--- 6.2 Pasajeros sin maletas vs con maletas por canal
+-- Pasajeros sin maletas vs con maletas por canal
 SELECT
     c.Canal,
     SUM(CASE WHEN h.Total_Maletas = 0 THEN 1 ELSE 0 END) AS Sin_Maletas,
