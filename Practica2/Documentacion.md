@@ -1,10 +1,12 @@
 # Documentación Técnica — Práctica 2
 ## Diseño de Dashboard y KPIs con Power BI
 
-**Curso:** Seminario de Sistemas 2  
-**Universidad:** San Carlos de Guatemala — Facultad de Ingeniería  
-**Semestre:** 2026-1  
-**Base de datos:** VuelosBI (SQL Server)
+ 
+Universidad de San Carlos de Guatemala — Facultad de Ingeniería
+**Curso:** Seminario de Sistemas 2 
+
+JOAQUIN EMMANUEL ALDAIR COROMAC HUEZO
+201903873
 
 ---
 
@@ -19,7 +21,7 @@
 
 ---
 
-## 1. Introducción
+## Introducción
 
 Las organizaciones del sector aéreo generan grandes volúmenes de datos transaccionales que, sin un análisis adecuado, no aportan valor para la toma de decisiones. En esta práctica se conectó Power BI Desktop a la base de datos relacional **VuelosBI** (creada en la Práctica 1 sobre SQL Server), con el objetivo de transformar datos operativos de vuelos en información estratégica mediante un dashboard interactivo.
 
@@ -31,9 +33,9 @@ Construir un dashboard interactivo con KPIs estratégicos que permita visualizar
 
 ---
 
-## 2. Diseño del Modelo Tabular
+## Diseño del Modelo Tabular
 
-### 2.1 Conexión a la fuente de datos
+### Conexión a la fuente de datos
 
 Se estableció conexión directa desde Power BI Desktop hacia SQL Server Express utilizando los siguientes parámetros:
 
@@ -46,7 +48,7 @@ Se estableció conexión directa desde Power BI Desktop hacia SQL Server Express
 
 Se importaron las 10 tablas del modelo: `Hechos_Vuelo`, `DIM_AEROLINEA`, `DIM_PASAJERO`, `DIM_AEROPUERTO`, `DIM_TIEMPO`, `DIM_CANAL`, `DIM_METODO_PAGO`, `DIM_AERONAVE`, `DIM_CLASE` y `DIM_ESTADO_VUELO`.
 
-### 2.2 Relaciones del modelo
+### Relaciones del modelo
 
 El modelo sigue un esquema estrella donde `Hechos_Vuelo` es la tabla central conectada a las 9 dimensiones. Se configuraron 12 relaciones en total:
 
@@ -70,7 +72,7 @@ El modelo sigue un esquema estrella donde `Hechos_Vuelo` es la tabla central con
 - **DIM_TIEMPO** tiene relación activa por `ID_Fecha_Salida` (la fecha de salida es la más relevante para análisis operativo).
 - **DIM_AEROPUERTO** tiene relación activa por `ID_Aeropuerto_Origen`.
 
-### 2.3 Jerarquías
+### Jerarquías
 
 Se crearon dos jerarquías para habilitar el drill-down en las visualizaciones:
 
@@ -96,11 +98,11 @@ Permite analizar el volumen de vuelos primero por país y luego desglosar por ae
 
 ---
 
-## 3. Medidas DAX
+## Medidas DAX
 
 Se crearon 4 medidas DAX principales más una medida de objetivo para el KPI. Todas las medidas se definieron en la tabla `Hechos_Vuelo`.
 
-### 3.1 Total Ingresos
+### Total Ingresos
 
 ```dax
 Total Ingresos = SUM(Hechos_Vuelo[Precio_Ticket])
@@ -112,7 +114,7 @@ Total Ingresos = SUM(Hechos_Vuelo[Precio_Ticket])
 
 **Relevancia estratégica:** Permite evaluar el desempeño financiero global de las aerolíneas y comparar ingresos entre aerolíneas, rutas, clases de cabina y períodos de tiempo.
 
-### 3.2 Total Vuelos
+### Total Vuelos
 
 ```dax
 Total Vuelos = SUM(Hechos_Vuelo[Cantidad_Vuelo])
@@ -124,7 +126,7 @@ Total Vuelos = SUM(Hechos_Vuelo[Cantidad_Vuelo])
 
 **Relevancia estratégica:** Indicador de volumen operativo. Permite identificar temporadas altas/bajas y comparar actividad entre aerolíneas y rutas.
 
-### 3.3 Promedio Retraso
+### Promedio Retraso
 
 ```dax
 Promedio Retraso = AVERAGE(Hechos_Vuelo[Retraso])
@@ -136,7 +138,7 @@ Promedio Retraso = AVERAGE(Hechos_Vuelo[Retraso])
 
 **Relevancia estratégica:** Un retraso promedio de 26 minutos indica áreas de mejora operativa. Este indicador es clave para evaluar la calidad del servicio y la satisfacción del pasajero.
 
-### 3.4 Tasa de Puntualidad (KPI Principal)
+### Tasa de Puntualidad (KPI Principal)
 
 ```dax
 Tasa Puntualidad = 
@@ -156,7 +158,7 @@ DIVIDE(
 
 **Relevancia estratégica:** Este es el KPI principal del dashboard. La industria aérea considera aceptable una tasa de puntualidad del 80-85%. Con un 72.78%, el indicador está por debajo del estándar, lo cual señala la necesidad de investigar las causas de retrasos y cancelaciones.
 
-### 3.5 Objetivo de Puntualidad
+### Objetivo de Puntualidad
 
 ```dax
 Objetivo Puntualidad = 0.85
@@ -168,9 +170,9 @@ Objetivo Puntualidad = 0.85
 
 ---
 
-## 4. KPIs e Indicadores de Desempeño
+## KPIs e Indicadores de Desempeño
 
-### 4.1 KPI Principal: Tasa de Puntualidad
+### KPI Principal: Tasa de Puntualidad
 
 | Aspecto | Detalle |
 |---------|---------|
@@ -190,7 +192,7 @@ El semáforo muestra en **rojo** porque el valor actual (72.78%) está por debaj
 
 ![KPI con Semáforo](Images/KPI_Semaforo.png)
 
-### 4.2 Interpretación de los Indicadores
+### Interpretación de los Indicadores
 
 **Tasa de Puntualidad (72.78%):** El hecho de que aproximadamente 1 de cada 4 vuelos no llegue a tiempo representa un problema operativo significativo. Las causas pueden incluir congestión en aeropuertos clave, condiciones meteorológicas o problemas logísticos de aerolíneas específicas. Se recomienda analizar qué aerolíneas y rutas contribuyen más a los retrasos para focalizar las acciones correctivas.
 
@@ -206,9 +208,9 @@ El semáforo muestra en **rojo** porque el valor actual (72.78%) está por debaj
 
 ---
 
-## 5. Dashboard — Visualizaciones
+## Dashboard — Visualizaciones
 
-### 5.1 Página 1: Vista General de Operaciones
+### Página 1: Vista General de Operaciones
 
 ![Dashboard Página 1](Images/Dashboard1.png)
 
@@ -228,7 +230,7 @@ Esta página presenta un resumen ejecutivo de la operación con los siguientes c
 - La tendencia de vuelos muestra un incremento entre 2024 y 2025.
 - El 72.78% de puntualidad está 14.84 puntos porcentuales por debajo del objetivo.
 
-### 5.2 Página 2: Análisis de Ventas y Rutas
+### Página 2: Análisis de Ventas y Rutas
 
 ![Dashboard Página 2](Images/Dashboard2.png)
 
@@ -247,7 +249,7 @@ Esta página profundiza en el análisis de canales de venta, métodos de pago y 
 - TARJETA es el método de pago dominante en todos los canales.
 - La clase ECONOMY genera la mayor proporción de ingresos en todas las aerolíneas.
 
-### 5.3 Interactividad y Filtros
+### Interactividad y Filtros
 
 ![Segmentadores](Images/Slicers.png)
 
@@ -261,7 +263,7 @@ Al seleccionar cualquier combinación de filtros, todas las visualizaciones se a
 
 ---
 
-## 6. Conclusiones y Recomendaciones
+## Conclusiones y Recomendaciones
 
 ### Conclusiones
 
@@ -275,16 +277,5 @@ Al seleccionar cualquier combinación de filtros, todas las visualizaciones se a
 
 5. **TARJETA es el método de pago preferido** en todos los canales, lo cual simplifica la gestión de cobros pero sugiere oportunidad de incentivar otros métodos.
 
-### Recomendaciones
-
-1. **Investigar las aerolíneas con peor puntualidad** mediante el filtro de aerolínea en el dashboard, y establecer planes de mejora específicos por cada una.
-
-2. **Analizar las rutas con mayor retraso** usando el filtro de aeropuertos para identificar si el problema es logístico (aeropuerto congestionado) u operativo (aerolínea específica).
-
-3. **Establecer metas intermedias** de puntualidad (ej. 78% para Q1, 82% para Q2) para alcanzar progresivamente el objetivo del 85%.
-
-4. **Fortalecer los canales digitales** de venta (WEB y APP), ya que muestran buen desempeño y tienen menor costo operativo que los canales presenciales.
-
-5. **Implementar alertas automáticas** en Power BI Service para notificar cuando la tasa de puntualidad caiga por debajo de umbrales críticos.
 
 ---
