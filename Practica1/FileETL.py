@@ -20,17 +20,15 @@ from pathlib import Path
 # ============================================================
 
 # Rutas de los archivos fuente
-RUTA_DATASET1 = "Dataset_1.csv"   # vuelos
-RUTA_DATASET2 = "Dataset_2.csv"   # pasajeros
+RUTA_DATASET1 = ".\Dataset\Dataset 1.csv"
+RUTA_DATASET2 = ".\Dataset\Dataset 2.csv" 
 
-# Cadena de conexión a SQL Server
 CONEXION_SQL = (
     "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost;"       
+    "SERVER=localhost\\SQLEXPRESS;"
     "DATABASE=VuelosBI;"
     "Trusted_Connection=yes;"
-    # "UID=tu_usuario;"
-    # "PWD=tu_contraseña;"
+    "TrustServerCertificate=yes;"
 )
 
 # Ruta donde se guardará el log de errores
@@ -82,6 +80,7 @@ NORMALIZACION_GENERO = {
     "m": "M", "masculino": "M", "male": "M",
     "f": "F", "femenino": "F", "female": "F",
     "x": "X", "otro": "X", "other": "X", "o": "X",
+    "n": "X", "nonbinary": "X", "no binario": "X",  
 }
 
 
@@ -173,11 +172,9 @@ def parsear_fecha(valor: str) -> datetime | None:
 
 
 def normalizar_genero(valor: str) -> str:
-    """
-    Convierte cualquier variante de género al código estándar M/F/X.
-    """
     clave = valor.strip().lower().replace("-", "").replace("_", "")
-    return NORMALIZACION_GENERO.get(clave, valor.strip().upper() or "X")
+    resultado = NORMALIZACION_GENERO.get(clave, "X")
+    return resultado[0]  
 
 
 def convertir_precio(valor: str) -> float | None:
@@ -201,7 +198,7 @@ def transformar_vuelos(df_raw: pd.DataFrame) -> pd.DataFrame:
     errores = 0
 
     # -- Limpiar espacios en blanco de todos los campos de texto --
-    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
 
     # -- Aeropuertos: normalizar a mayúsculas --
     for col in ["origin_airport", "destination_airport"]:
@@ -264,7 +261,7 @@ def transformar_pasajeros(df_raw: pd.DataFrame) -> pd.DataFrame:
     errores = 0
 
     # -- Limpiar espacios --
-    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
 
     # -- Género: normalizar variantes --
     df["genero_normalizado"] = df["passenger_gender"].apply(normalizar_genero)

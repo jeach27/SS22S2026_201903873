@@ -1,0 +1,255 @@
+2026-03-07 00:22:47  [INFO]  ============================================================
+2026-03-07 00:22:47  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:22:47  [INFO]    Fecha y hora: 2026-03-07 00:22:47
+2026-03-07 00:22:47  [INFO]  ============================================================
+2026-03-07 00:22:47  [INFO]  ============================================================
+2026-03-07 00:22:47  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:22:47  [INFO]  ============================================================
+2026-03-07 00:22:47  [INFO]  Leyendo Dataset/Dataset_1.csv...
+2026-03-07 00:22:47  [ERROR]  No se encontró el archivo Dataset/Dataset_1.csv. Verifica la ruta.
+2026-03-07 00:22:47  [ERROR]  El proceso ETL falló: [Errno 2] No such file or directory: 'Dataset/Dataset_1.csv'
+2026-03-07 00:23:29  [INFO]  ============================================================
+2026-03-07 00:23:29  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:23:29  [INFO]    Fecha y hora: 2026-03-07 00:23:29
+2026-03-07 00:23:29  [INFO]  ============================================================
+2026-03-07 00:23:29  [INFO]  ============================================================
+2026-03-07 00:23:29  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:23:29  [INFO]  ============================================================
+2026-03-07 00:23:29  [INFO]  Leyendo Dataset/Dataset_1.csv...
+2026-03-07 00:23:29  [ERROR]  No se encontró el archivo Dataset/Dataset_1.csv. Verifica la ruta.
+2026-03-07 00:23:29  [ERROR]  El proceso ETL falló: [Errno 2] No such file or directory: 'Dataset/Dataset_1.csv'
+2026-03-07 00:24:05  [INFO]  ============================================================
+2026-03-07 00:24:05  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:24:05  [INFO]    Fecha y hora: 2026-03-07 00:24:05
+2026-03-07 00:24:05  [INFO]  ============================================================
+2026-03-07 00:24:05  [INFO]  ============================================================
+2026-03-07 00:24:05  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:24:05  [INFO]  ============================================================
+2026-03-07 00:24:05  [INFO]  Leyendo D:\JEACH\1S2026\SEMI2\LABORATORIO\SS22S2026_201903873\Practica1\Dataset\Dataset_1.csv...
+2026-03-07 00:24:05  [ERROR]  No se encontró el archivo D:\JEACH\1S2026\SEMI2\LABORATORIO\SS22S2026_201903873\Practica1\Dataset\Dataset_1.csv. Verifica la ruta.
+2026-03-07 00:24:05  [ERROR]  El proceso ETL falló: [Errno 2] No such file or directory: 'D:\\JEACH\\1S2026\\SEMI2\\LABORATORIO\\SS22S2026_201903873\\Practica1\\Dataset\\Dataset_1.csv'
+2026-03-07 00:25:30  [INFO]  ============================================================
+2026-03-07 00:25:30  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:25:30  [INFO]    Fecha y hora: 2026-03-07 00:25:30
+2026-03-07 00:25:30  [INFO]  ============================================================
+2026-03-07 00:25:30  [INFO]  ============================================================
+2026-03-07 00:25:30  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:25:30  [INFO]  ============================================================
+2026-03-07 00:25:30  [INFO]  Leyendo .\Dataset\Dataset 1.csv...
+2026-03-07 00:25:30  [INFO]    Dataset_1 leído: 10,000 filas, 14 columnas
+2026-03-07 00:25:30  [INFO]  Leyendo .\Dataset\Dataset_2.csv...
+2026-03-07 00:25:30  [ERROR]  No se encontró el archivo .\Dataset\Dataset_2.csv. Verifica la ruta.
+2026-03-07 00:25:30  [ERROR]  El proceso ETL falló: [Errno 2] No such file or directory: '.\\Dataset\\Dataset_2.csv'
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:26:06  [INFO]    Fecha y hora: 2026-03-07 00:26:06
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]  Leyendo .\Dataset\Dataset 1.csv...
+2026-03-07 00:26:06  [INFO]    Dataset_1 leído: 10,000 filas, 14 columnas
+2026-03-07 00:26:06  [INFO]  Leyendo .\Dataset\Dataset 2.csv...
+2026-03-07 00:26:06  [INFO]    Dataset_2 leído: 10,000 filas, 12 columnas
+2026-03-07 00:26:06  [INFO]  Extracción completada exitosamente.
+
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]  FASE 2: TRANSFORMACIÓN
+2026-03-07 00:26:06  [INFO]  ============================================================
+2026-03-07 00:26:06  [INFO]  Transformando Dataset_1 (vuelos)...
+2026-03-07 00:26:06  [ERROR]  El proceso ETL falló: 'DataFrame' object has no attribute 'applymap'
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:27:46  [INFO]    Fecha y hora: 2026-03-07 00:27:46
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  Leyendo .\Dataset\Dataset 1.csv...
+2026-03-07 00:27:46  [INFO]    Dataset_1 leído: 10,000 filas, 14 columnas
+2026-03-07 00:27:46  [INFO]  Leyendo .\Dataset\Dataset 2.csv...
+2026-03-07 00:27:46  [INFO]    Dataset_2 leído: 10,000 filas, 12 columnas
+2026-03-07 00:27:46  [INFO]  Extracción completada exitosamente.
+
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  FASE 2: TRANSFORMACIÓN
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  Transformando Dataset_1 (vuelos)...
+2026-03-07 00:27:46  [INFO]    Parseando fechas de vuelo...
+2026-03-07 00:27:46  [INFO]    Vuelos CANCELLED (sin llegada/duración): 560
+2026-03-07 00:27:46  [INFO]    Transformación vuelos completada. Errores/advertencias: 0
+2026-03-07 00:27:46  [INFO]  Transformando Dataset_2 (pasajeros)...
+2026-03-07 00:27:46  [INFO]    Género normalizado: 12 variantes → M/F/X
+2026-03-07 00:27:46  [WARNING]    57 edades con valor 0 → se convierten a NULL
+2026-03-07 00:27:46  [WARNING]    209 registros sin nacionalidad → quedarán como NULL
+2026-03-07 00:27:46  [WARNING]    144 registros sin canal de venta → 'DESCONOCIDO'
+2026-03-07 00:27:46  [INFO]    Parseando fechas de reserva...
+2026-03-07 00:27:46  [INFO]    Transformación pasajeros completada. Errores/advertencias: 201
+2026-03-07 00:27:46  [INFO]  Construyendo dimensiones...
+2026-03-07 00:27:46  [INFO]    DIM_AEROLINEA: 12 registros
+2026-03-07 00:27:46  [INFO]    DIM_AEROPUERTO: 15 registros
+2026-03-07 00:27:46  [INFO]    DIM_CANAL: 6 registros
+2026-03-07 00:27:46  [INFO]    DIM_METODO_PAGO: 5 registros
+2026-03-07 00:27:46  [INFO]    DIM_AERONAVE: 12 registros
+2026-03-07 00:27:46  [INFO]    DIM_CLASE: 4 registros
+2026-03-07 00:27:46  [INFO]    DIM_ESTADO_VUELO: 4 registros
+2026-03-07 00:27:46  [INFO]    DIM_PASAJERO: 10000 registros
+2026-03-07 00:27:46  [INFO]    DIM_TIEMPO: 861 registros
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:46  [INFO]  FASE 3: CARGA
+2026-03-07 00:27:46  [INFO]  ============================================================
+2026-03-07 00:27:47  [INFO]  Conexión a SQL Server establecida.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_TIEMPO...
+2026-03-07 00:27:47  [INFO]    DIM_TIEMPO: 861 registros cargados.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_AEROLINEA...
+2026-03-07 00:27:47  [INFO]    DIM_AEROLINEA: 12 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_AEROPUERTO...
+2026-03-07 00:27:47  [INFO]    DIM_AEROPUERTO: 15 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_CANAL...
+2026-03-07 00:27:47  [INFO]    DIM_CANAL: 6 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_METODO_PAGO...
+2026-03-07 00:27:47  [INFO]    DIM_METODO_PAGO: 5 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_AERONAVE...
+2026-03-07 00:27:47  [INFO]    DIM_AERONAVE: 12 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_CLASE...
+2026-03-07 00:27:47  [INFO]    DIM_CLASE: 4 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_ESTADO_VUELO...
+2026-03-07 00:27:47  [INFO]    DIM_ESTADO_VUELO: 4 registros.
+2026-03-07 00:27:47  [INFO]  Cargando DIM_PASAJERO...
+2026-03-07 00:27:47  [ERROR]  Error durante la carga. Se hizo rollback. Detalle: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'VuelosBI.dbo.DIM_PASAJERO', column 'Genero'. Truncated value: 'N'. (2628) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-03-07 00:27:47  [INFO]  Conexión cerrada.
+2026-03-07 00:27:47  [ERROR]  El proceso ETL falló: ('42000', "[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'VuelosBI.dbo.DIM_PASAJERO', column 'Genero'. Truncated value: 'N'. (2628) (SQLExecDirectW); [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 00:29:25  [INFO]    Fecha y hora: 2026-03-07 00:29:25
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  Leyendo .\Dataset\Dataset 1.csv...
+2026-03-07 00:29:25  [INFO]    Dataset_1 leído: 10,000 filas, 14 columnas
+2026-03-07 00:29:25  [INFO]  Leyendo .\Dataset\Dataset 2.csv...
+2026-03-07 00:29:25  [INFO]    Dataset_2 leído: 10,000 filas, 12 columnas
+2026-03-07 00:29:25  [INFO]  Extracción completada exitosamente.
+
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  FASE 2: TRANSFORMACIÓN
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  Transformando Dataset_1 (vuelos)...
+2026-03-07 00:29:25  [INFO]    Parseando fechas de vuelo...
+2026-03-07 00:29:25  [INFO]    Vuelos CANCELLED (sin llegada/duración): 560
+2026-03-07 00:29:25  [INFO]    Transformación vuelos completada. Errores/advertencias: 0
+2026-03-07 00:29:25  [INFO]  Transformando Dataset_2 (pasajeros)...
+2026-03-07 00:29:25  [INFO]    Género normalizado: 12 variantes → M/F/X
+2026-03-07 00:29:25  [WARNING]    57 edades con valor 0 → se convierten a NULL
+2026-03-07 00:29:25  [WARNING]    209 registros sin nacionalidad → quedarán como NULL
+2026-03-07 00:29:25  [WARNING]    144 registros sin canal de venta → 'DESCONOCIDO'
+2026-03-07 00:29:25  [INFO]    Parseando fechas de reserva...
+2026-03-07 00:29:25  [INFO]    Transformación pasajeros completada. Errores/advertencias: 201
+2026-03-07 00:29:25  [INFO]  Construyendo dimensiones...
+2026-03-07 00:29:25  [INFO]    DIM_AEROLINEA: 12 registros
+2026-03-07 00:29:25  [INFO]    DIM_AEROPUERTO: 15 registros
+2026-03-07 00:29:25  [INFO]    DIM_CANAL: 6 registros
+2026-03-07 00:29:25  [INFO]    DIM_METODO_PAGO: 5 registros
+2026-03-07 00:29:25  [INFO]    DIM_AERONAVE: 12 registros
+2026-03-07 00:29:25  [INFO]    DIM_CLASE: 4 registros
+2026-03-07 00:29:25  [INFO]    DIM_ESTADO_VUELO: 4 registros
+2026-03-07 00:29:25  [INFO]    DIM_PASAJERO: 10000 registros
+2026-03-07 00:29:25  [INFO]    DIM_TIEMPO: 861 registros
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  FASE 3: CARGA
+2026-03-07 00:29:25  [INFO]  ============================================================
+2026-03-07 00:29:25  [INFO]  Conexión a SQL Server establecida.
+2026-03-07 00:29:25  [INFO]  Cargando DIM_TIEMPO...
+2026-03-07 00:29:26  [INFO]    DIM_TIEMPO: 861 registros cargados.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_AEROLINEA...
+2026-03-07 00:29:26  [INFO]    DIM_AEROLINEA: 12 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_AEROPUERTO...
+2026-03-07 00:29:26  [INFO]    DIM_AEROPUERTO: 15 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_CANAL...
+2026-03-07 00:29:26  [INFO]    DIM_CANAL: 6 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_METODO_PAGO...
+2026-03-07 00:29:26  [INFO]    DIM_METODO_PAGO: 5 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_AERONAVE...
+2026-03-07 00:29:26  [INFO]    DIM_AERONAVE: 12 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_CLASE...
+2026-03-07 00:29:26  [INFO]    DIM_CLASE: 4 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_ESTADO_VUELO...
+2026-03-07 00:29:26  [INFO]    DIM_ESTADO_VUELO: 4 registros.
+2026-03-07 00:29:26  [INFO]  Cargando DIM_PASAJERO...
+2026-03-07 00:29:36  [INFO]    DIM_PASAJERO: 10000 registros.
+2026-03-07 00:29:36  [INFO]  Cargando Hechos_Vuelo (puede tardar unos segundos)...
+2026-03-07 00:29:40  [INFO]    Hechos_Vuelo: 10,000 registros insertados.
+2026-03-07 00:29:40  [INFO]  Conexión cerrada.
+2026-03-07 00:29:40  [INFO]  ============================================================
+2026-03-07 00:29:40  [INFO]    ETL COMPLETADO EXITOSAMENTE
+2026-03-07 00:29:40  [INFO]    Duración total: 15 segundos
+2026-03-07 00:29:40  [INFO]    Log guardado en: etl_log.txt
+2026-03-07 00:29:40  [INFO]  ============================================================
+2026-03-07 13:09:44  [INFO]  ============================================================
+2026-03-07 13:09:44  [INFO]    INICIO DEL PROCESO ETL - VuelosBI
+2026-03-07 13:09:44  [INFO]    Fecha y hora: 2026-03-07 13:09:44
+2026-03-07 13:09:44  [INFO]  ============================================================
+2026-03-07 13:09:44  [INFO]  ============================================================
+2026-03-07 13:09:44  [INFO]  FASE 1: EXTRACCIÓN
+2026-03-07 13:09:44  [INFO]  ============================================================
+2026-03-07 13:09:44  [INFO]  Leyendo .\Dataset\Dataset 1.csv...
+2026-03-07 13:09:45  [INFO]    Dataset_1 leído: 10,000 filas, 14 columnas
+2026-03-07 13:09:45  [INFO]  Leyendo .\Dataset\Dataset 2.csv...
+2026-03-07 13:09:45  [INFO]    Dataset_2 leído: 10,000 filas, 12 columnas
+2026-03-07 13:09:45  [INFO]  Extracción completada exitosamente.
+
+2026-03-07 13:09:45  [INFO]  ============================================================
+2026-03-07 13:09:45  [INFO]  FASE 2: TRANSFORMACIÓN
+2026-03-07 13:09:45  [INFO]  ============================================================
+2026-03-07 13:09:45  [INFO]  Transformando Dataset_1 (vuelos)...
+2026-03-07 13:09:45  [INFO]    Parseando fechas de vuelo...
+2026-03-07 13:09:45  [INFO]    Vuelos CANCELLED (sin llegada/duración): 560
+2026-03-07 13:09:45  [INFO]    Transformación vuelos completada. Errores/advertencias: 0
+2026-03-07 13:09:45  [INFO]  Transformando Dataset_2 (pasajeros)...
+2026-03-07 13:09:45  [INFO]    Género normalizado: 12 variantes → M/F/X
+2026-03-07 13:09:45  [WARNING]    57 edades con valor 0 → se convierten a NULL
+2026-03-07 13:09:45  [WARNING]    209 registros sin nacionalidad → quedarán como NULL
+2026-03-07 13:09:45  [WARNING]    144 registros sin canal de venta → 'DESCONOCIDO'
+2026-03-07 13:09:45  [INFO]    Parseando fechas de reserva...
+2026-03-07 13:09:46  [INFO]    Transformación pasajeros completada. Errores/advertencias: 201
+2026-03-07 13:09:46  [INFO]  Construyendo dimensiones...
+2026-03-07 13:09:46  [INFO]    DIM_AEROLINEA: 12 registros
+2026-03-07 13:09:46  [INFO]    DIM_AEROPUERTO: 15 registros
+2026-03-07 13:09:46  [INFO]    DIM_CANAL: 6 registros
+2026-03-07 13:09:46  [INFO]    DIM_METODO_PAGO: 5 registros
+2026-03-07 13:09:46  [INFO]    DIM_AERONAVE: 12 registros
+2026-03-07 13:09:46  [INFO]    DIM_CLASE: 4 registros
+2026-03-07 13:09:46  [INFO]    DIM_ESTADO_VUELO: 4 registros
+2026-03-07 13:09:46  [INFO]    DIM_PASAJERO: 10000 registros
+2026-03-07 13:09:46  [INFO]    DIM_TIEMPO: 861 registros
+2026-03-07 13:09:46  [INFO]  ============================================================
+2026-03-07 13:09:46  [INFO]  FASE 3: CARGA
+2026-03-07 13:09:46  [INFO]  ============================================================
+2026-03-07 13:09:46  [INFO]  Conexión a SQL Server establecida.
+2026-03-07 13:09:46  [INFO]  Cargando DIM_TIEMPO...
+2026-03-07 13:09:46  [INFO]    DIM_TIEMPO: 861 registros cargados.
+2026-03-07 13:09:46  [INFO]  Cargando DIM_AEROLINEA...
+2026-03-07 13:09:47  [INFO]    DIM_AEROLINEA: 12 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_AEROPUERTO...
+2026-03-07 13:09:47  [INFO]    DIM_AEROPUERTO: 15 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_CANAL...
+2026-03-07 13:09:47  [INFO]    DIM_CANAL: 6 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_METODO_PAGO...
+2026-03-07 13:09:47  [INFO]    DIM_METODO_PAGO: 5 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_AERONAVE...
+2026-03-07 13:09:47  [INFO]    DIM_AERONAVE: 12 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_CLASE...
+2026-03-07 13:09:47  [INFO]    DIM_CLASE: 4 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_ESTADO_VUELO...
+2026-03-07 13:09:47  [INFO]    DIM_ESTADO_VUELO: 4 registros.
+2026-03-07 13:09:47  [INFO]  Cargando DIM_PASAJERO...
+2026-03-07 13:10:09  [INFO]    DIM_PASAJERO: 10000 registros.
+2026-03-07 13:10:09  [INFO]  Cargando Hechos_Vuelo (puede tardar unos segundos)...
+2026-03-07 13:10:23  [INFO]    Hechos_Vuelo: 10,000 registros insertados.
+2026-03-07 13:10:23  [INFO]  Conexión cerrada.
+2026-03-07 13:10:23  [INFO]  ============================================================
+2026-03-07 13:10:23  [INFO]    ETL COMPLETADO EXITOSAMENTE
+2026-03-07 13:10:23  [INFO]    Duración total: 38 segundos
+2026-03-07 13:10:23  [INFO]    Log guardado en: etl_log.txt
+2026-03-07 13:10:23  [INFO]  ============================================================
